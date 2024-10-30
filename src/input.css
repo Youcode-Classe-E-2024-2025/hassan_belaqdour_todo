@@ -5,3 +5,6 @@
 .add-tasck{
     @apply bg-blue-300 h-10 pr-6 pl-6 flex items-center justify-center rounded-xl
 }
+.list-to-do{
+    @apply  bg-blue-300 rounded-xl w-1/3 
+}

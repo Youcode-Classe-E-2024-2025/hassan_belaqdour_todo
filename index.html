@@ -9,7 +9,6 @@
 </head>
 <body class="bg-blue-950">
     <section>
-                                <!-- div qui resemble search-bar / add multipl / add  -->
         <div class="flex flex-row justify-evenly  mt-5"> 
             <div>
                 <button class="add-tasck" > + add multipl </button>
@@ -20,9 +19,39 @@
                     <button class="bg-blue-300 rounded-md w-1/4 h-8"> search </button>
             </div>
             <div>
-                    <button class="add-tasck"> + add one </button>
+                    <button class="add-tasck" onclick="zidtsck()"> + add one </button>
             </div>
         </div>
     </section>
+
+    <section>
+        <div class="flex flex-row justify-evenly mt-20 max-w-full gap-10 pl-4 pr-5">
+                <div class="list-to-do">
+                    <h2> To Do </h2>
+                    <div></div>
+                </div >
+                <div class="list-to-do">
+                    <h2> Doing </h2>
+                </div>
+                <div class="list-to-do">
+                    <h2> Done </h2>
+                </div>
+        </div>
+    </section>
+            <!-- fach kat3mr les information -->
+    <div class="flex flex-col rounded-xl pr-52 pl-52 hidden" id="modal">
+        <input type="text" placeholder="title" class="mb-4 p-2 border rounded">
+        <input type="text" placeholder="description" class="mb-4 p-2 border rounded">
+        <input type="datetime-local" class="mb-4 p-2 border rounded">
+        <select name="la priorite" id="priorite" class="mb-4 p-2 border rounded">
+            <option value="high"> P1</option>
+            <option value="medium"> P2</option>
+            <option value="low"> P3</option>
+        </select>
+        <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Fermer</button>
+    </div>
+
+                <!-- js -->
+    <script src="javascript.js"></script>
 </body>
 </html>
