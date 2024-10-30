@@ -28,28 +28,46 @@
         <div class="flex flex-row justify-evenly mt-20 max-w-full gap-10 pl-4 pr-5">
                 <div class="list-to-do">
                     <h2> To Do </h2>
-                    <div></div>
+                    <div id="to-do"></div>
                 </div >
+
                 <div class="list-to-do">
                     <h2> Doing </h2>
+                    <div id="doing"></div>
                 </div>
+
                 <div class="list-to-do">
                     <h2> Done </h2>
+                    <div id="done"></div>
                 </div>
         </div>
     </section>
-            <!-- fach kat3mr les information -->
-    <div class="flex flex-col rounded-xl pr-52 pl-52 hidden" id="modal">
-        <input type="text" placeholder="title" class="mb-4 p-2 border rounded">
-        <input type="text" placeholder="description" class="mb-4 p-2 border rounded">
-        <input type="datetime-local" class="mb-4 p-2 border rounded">
-        <select name="la priorite" id="priorite" class="mb-4 p-2 border rounded">
-            <option value="high"> P1</option>
-            <option value="medium"> P2</option>
-            <option value="low"> P3</option>
-        </select>
-        <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Fermer</button>
+            <!-- remplissage d'information -->
+
+  
+    <div class="fixed inset-0 flex justify-center items-center w-full hidden" id="modal">
+            <div class=" flex justify-center flex-col bg-white w-2/4  p-8 gap-5 rounded-lg">
+                    <input type="text" placeholder="title" id="title" class="border text-center h-8 text-black border-gray-400 rounded-md text-wrap">
+                    
+                    <input type="text" placeholder="description" id="description" class="text-center h-28 text-black border border-gray-400 rounded-md">
+                   
+                    <div class="flex flex-row gap-3 justify-center " >
+                        <select name="priority" placeholder="priority" id="priority" class="text-black border border-gray-400 rounded-md h-8 text-center w-1/2" >
+                            <option value="p1">P1</option>
+                            <option value="p2">P2</option>
+                            <option value="p3">P3</option>
+                        </select>
+                        <input type="datetime-local" id="date" class="text-black border border-gray-400 rounded-md text-center h-8 w-1/2">
+                   </div>
+            
+                    <div class="flex flex-row gap-2">
+                        <button class="bg-slate-600 text-white rounded-md h-8 w-1/2" onclick="closeModal()">close</button>
+                        <button class="bg-blue-400 text-white rounded-md h-8 w-1/2" onclick="addtask()">Add</button>
+                        
+                    </div>
+            </div>
     </div>
+
 
                 <!-- js -->
     <script src="javascript.js"></script>
