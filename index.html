@@ -3,18 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/output.css">
     <title>to do list </title>
+
 </head>
-<body>
+<body class="bg-blue-950">
     <section>
-        <div class="contanaire">
-            <div class="search-bar">
-                    <input type="text" placeholder="search for a tasck">
-                    
+                                <!-- div qui resemble search-bar / add multipl / add  -->
+        <div class="flex flex-row justify-evenly  mt-5"> 
+            <div>
+                <button class="add-tasck" > + add multipl </button>
+            </div>
+            
+            <div class="bg-white h-10 w-1/2 flex items-center justify-between pr-5 pl-5 rounded-xl">
+                    <input type="text" placeholder="search for a tasck" class="border-none outline-none w-1/2">
+                    <button class="bg-blue-300 rounded-md w-1/4 h-8"> search </button>
             </div>
             <div>
-                <button> add tasck </button>
+                    <button class="add-tasck"> + add one </button>
             </div>
         </div>
     </section>
