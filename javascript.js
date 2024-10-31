@@ -23,7 +23,7 @@ function addtask() {
 
                 // creer un element de tache 
     const task = document.createElement('div');
-    task.classList.add('p-3', 'm-8', 'rounded-xl', 'bg-white', 'border-4');
+    task.classList.add('p-1', 'm-8', 'rounded-xl', 'bg-white', 'border-4');
 
                 // les couleur de priority 
     if (priority === 'high') {
@@ -39,7 +39,11 @@ function addtask() {
         <h3 class="font-bold">${title}</h3>
         <p class="overflow-hidden">${description}</p>
         <p class="text-gray-500 text-sm">${new Date(date).toLocaleString()}</p>
-    `;
+        <div class="flex flex-row justify-center space-x-2 mt-2">
+            <button class="bg-red-500 w-1/2 text-white rounded-lg" onclick="this.parentElement.parentElement.remove()">delete</button>
+            <button class="bg-green-500 w-1/2 text-white rounded-lg">edit</button>
+        </div>
+        `;
 
                 // ajout du contenu de la formulaire dans la partie to do
     document.getElementById('to-do').appendChild(task);
