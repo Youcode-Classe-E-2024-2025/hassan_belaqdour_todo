@@ -10,9 +10,7 @@
 <body class="bg-blue-950">
     <section>
         <div class="flex flex-row justify-evenly  mt-5"> 
-            <div>
-                <button class="add-tasck" > + add multipl </button>
-            </div>
+        
             
             <div class="bg-white h-10 w-1/2 flex items-center justify-between pr-5 pl-5 rounded-xl">
                     <input type="text" placeholder="search for a tasck" class="border-none outline-none w-1/2">
@@ -25,11 +23,11 @@
     </section>
 
     <section>
-        <div class="flex flex-row justify-evenly mt-20 max-w-full gap-10 pl-4 pr-5">
+        <div class="flex flex-row justify-evenly items-start mt-20 max-w-full gap-10 pl-4 pr-5">
                 <div class="list-to-do">
                     <h2 class="text-center text-xl text-black font-bold rounded-lg bg-emerald-300 pt-1 pb-1"> To Do </h2>
                     <div id="to-do">
-                        
+
                     </div>
                 </div >
 
@@ -47,7 +45,7 @@
             <!-- remplissage d'information -->
 
   
-    <div class="fixed inset-0 flex justify-center items-center w-full hidden" id="modal">
+    <div class="fixed inset-0 flex justify-center items-center w-full hidden " id="modal">
             <div class=" flex justify-center flex-col bg-white w-2/4  p-8 gap-5 rounded-lg">
                     <input type="text" placeholder="title" id="title" class="border text-center h-8 text-black border-gray-400 rounded-md text-wrap">
                     
@@ -59,8 +57,13 @@
                             <option value="medium">P2</option>
                             <option value="low">P3</option>
                         </select>
-                        <input type="datetime-local" id="date" class="text-black border border-gray-400 rounded-md text-center h-8 w-1/2">
+                        <input type="datetime-local" id="date" class="text-black border border-gray-400 rounded-md text-center h-8 w-1/2 ">
                    </div>
+                   <select id="section" class="text-black border border-gray-400 rounded-md h-8 text-center mt-4">
+                    <option value="to-do">To Do</option>
+                    <option value="doing">Doing</option>
+                    <option value="done">Done</option>
+                </select>
             
                     <div class="flex flex-row gap-2">
                         <button class="bg-slate-600 text-white rounded-md h-8 w-1/2" onclick="closeModal()">close</button>
