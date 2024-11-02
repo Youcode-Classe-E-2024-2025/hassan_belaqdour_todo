@@ -26,6 +26,7 @@
         <div class="flex flex-row justify-evenly items-start mt-20 max-w-full gap-10 pl-4 pr-5">
                 <div class="list-to-do">
                     <h2 class="text-center text-xl text-black font-bold rounded-lg bg-emerald-300 pt-1 pb-1"> To Do </h2>
+                    <p id="to-do-nbrAdded" class="text-sm text-gray-500">Total added: 0</p>
                     <div id="to-do">
 
                     </div>
@@ -33,11 +34,13 @@
 
                 <div class="list-to-do">
                     <h2 class="text-center text-xl text-black font-bold rounded-lg bg-emerald-300 pt-1 pb-1"> Doing </h2>
+                    <p id="doing-nbrAdded" class="text-sm text-gray-500">Total added: 0</p>
                     <div id="doing"></div>
                 </div>
 
                 <div class="list-to-do">
                     <h2 class="text-center text-xl text-black font-bold rounded-lg bg-emerald-300 pt-1 pb-1"> Done </h2>
+                    <p id="done-nbrAdded" class="text-sm text-gray-500">Total added: 0</p>
                     <div id="done"></div>
                 </div>
         </div>
@@ -45,7 +48,7 @@
             <!-- remplissage d'information -->
 
   
-    <div class="fixed inset-0 flex justify-center items-center w-full hidden " id="modal">
+    <div class="fixed inset-0 flex justify-center items-center w-full hidden " id="forma">
             <div class=" flex justify-center flex-col bg-white w-2/4  p-8 gap-5 rounded-lg">
                     <input type="text" placeholder="title" id="title" class="border text-center h-8 text-black border-gray-400 rounded-md text-wrap">
                     
@@ -59,14 +62,14 @@
                         </select>
                         <input type="datetime-local" id="date" class="text-black border border-gray-400 rounded-md text-center h-8 w-1/2 ">
                    </div>
-                   <select id="section" class="text-black border border-gray-400 rounded-md h-8 text-center mt-4">
-                    <option value="to-do">To Do</option>
-                    <option value="doing">Doing</option>
-                    <option value="done">Done</option>
-                </select>
+                    <select id="section" class="text-black border border-gray-400 rounded-md h-8 text-center mt-4">
+            <option value="to-do">To Do</option>
+            <option value="doing">Doing</option>
+            <option value="done">Done</option>
+                 </select>
             
                     <div class="flex flex-row gap-2">
-                        <button class="bg-slate-600 text-white rounded-md h-8 w-1/2" onclick="closeModal()">close</button>
+                        <button class="bg-slate-600 text-white rounded-md h-8 w-1/2" onclick="closeForma()">close</button>
                         <button class="bg-blue-400 text-white rounded-md h-8 w-1/2" onclick="addtask()">Add</button>
                         
                     </div>
