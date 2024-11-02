@@ -47,9 +47,9 @@
     </section>
             <!-- remplissage d'information -->
 
-  
-    <div class="fixed inset-0 flex justify-center items-center w-full hidden " id="forma">
-            <div class=" flex justify-center flex-col bg-white w-2/4  p-8 gap-5 rounded-lg">
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden"></div>
+    <div class="fixed inset-0 flex justify-center items-center w-full  transform -translate-y-10 opacity-0 transition-all duration-300 hidden " id="forma">
+            <div class=" flex justify-center flex-col bg-white w-2/4  p-8 gap-5 rounded-lg shadow-lg transform transition-transform duration-300">
                     <input type="text" placeholder="title" id="title" class="border text-center h-8 text-black border-gray-400 rounded-md text-wrap">
                     
                     <textarea placeholder="description" id="description" class="text-center h-28 text-black border border-gray-400 rounded-md"></textarea>

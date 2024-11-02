@@ -4,11 +4,14 @@ let doingCount = 0;
 let doneCount = 0;
 
 function zidtsck() {
-  forma.classList.remove("hidden"); // Affiche la forma en retirant 'hidden'
+  overlay.classList.remove("hidden");
+  forma.classList.remove("hidden", "opacity-0", "-translate-y-10");
+  forma.classList.add("opacity-100", "translate-y-0");
 }
-// Fonction pour fermer la forma
 function closeForma() {
-  forma.classList.add("hidden"); // Cache la forma en ajoutant 'hidden'
+  forma.classList.add("opacity-0", "-translate-y-10"); 
+  overlay.classList.add("hidden"); 
+  setTimeout(() => forma.classList.add("hidden"), 300); 
 }
 
 function updateCounters() {
@@ -24,24 +27,22 @@ function updateCounters() {
 }
 
 function addtask() {
-  // recherche sur les valeurs des infos
   const title = document.getElementById("title").value;
   const description = document.getElementById("description").value;
   const priority = document.getElementById("priority").value;
   const date = document.getElementById("date").value;
   const section = document.getElementById("section").value;
 
-  // verefication si les div sont remplis
   if (!title || !description || !date) {
     alert("Please fill in all fields!");
     return;
   }
 
-  // creer un element de tache
   const task = document.createElement("div");
-  task.classList.add("p-1", "m-2", "rounded-xl", "bg-white", "border-4");
+  task.classList.add(
+    "p-1","m-2","rounded-xl","bg-white","border-4","transition-all","duration-300","transform","scale-90"
+  );
 
-  // les couleur de priority
   if (priority === "high") {
     task.classList.add("border-red-500");
   } else if (priority === "medium") {
@@ -50,7 +51,6 @@ function addtask() {
     task.classList.add("border-green-500");
   }
 
-  // Ajouter le contenu de la tache
   task.innerHTML = `
         <h3 class="font-bold">${title}</h3>
         <p class="overflow-hidden">${description}</p>
@@ -63,7 +63,8 @@ function addtask() {
         </div>
         `;
 
-  // ajout du contenu de la formulaire dans la partie to do
+   setTimeout(
+     () => task.classList.add( "transform", "scale-100"),50);
   if (section === "to-do") {
     document.getElementById("to-do").appendChild(task);
     toDoCount++;
@@ -75,24 +76,21 @@ function addtask() {
     doneCount++;
   }
 
-  updateCounters(); // mettre a jour les conteurs
+  updateCounters(); 
 
-  // Vider le formulaire
   document.getElementById("title").value = "";
   document.getElementById("description").value = "";
   document.getElementById("priority").value = "high";
   document.getElementById("date").value = "";
   document.getElementById("section").value = "to-do";
 
-  // Fermer la forma
   closeForma();
 }
 
 function deleteTask(button) {
   const task = button.parentElement.parentElement;
-  const section = task.parentElement.id; // Get the section ID
+  const section = task.parentElement.id; 
 
-  // Decrease the corresponding counter
   if (section === "to-do") {
     toDoCount--;
   } else if (section === "doing") {
@@ -101,14 +99,14 @@ function deleteTask(button) {
     doneCount--;
   }
 
-  updateCounters(); // mettre a jour les conteurs
-  task.remove(); // supprimmer le task
+  updateCounters(); 
+  task.classList.add("opacity-0", "transform", "scale-75");
+  setTimeout(() => task.remove(), 300);
 }
 
 function editStatus(button) {
   const task = button.parentElement.parentElement;
 
-  // Creation du menu pour choisir la nouvelle section
   const dropdown = document.createElement("select");
   dropdown.classList.add("status-dropdown","mt-2","border","border-gray-400","rounded-md");
   dropdown.innerHTML = `
@@ -118,7 +116,6 @@ function editStatus(button) {
         <option value="done">Done</option>
     `;
 
-  // l'evenement qui fais le deplacemant lorsque le choix est fait
   dropdown.addEventListener("change", function () {
     const selectedSection = dropdown.value;
 
@@ -128,13 +125,13 @@ function editStatus(button) {
             else if (currentSection === "doing") doingCount--;
             else if (currentSection === "done") doneCount--;
             
-            document.getElementById(selectedSection).appendChild(task); // deplacemant de tache
+            document.getElementById(selectedSection).appendChild(task); 
             updateCounters();
-            dropdown.remove(); // supprimer le menu apres son deplacement
+            dropdown.remove(); 
     }
   });
 
-  // Ajouter le menu sous le bouton "edit status"
+  
   task.appendChild(dropdown);
 }
 
